@@ -1,0 +1,164 @@
+<ion-header class="ion-no-border">
+        <ion-toolbar class="header">
+                <ion-buttons slot="start">
+                        <ion-back-button color="light" defaultHref="/user"></ion-back-button>
+                </ion-buttons>
+                <ion-item lines="none" button details="false">
+                        <ion-avatar slot="start">
+                                <img [alt]="'Nausad'"
+                                        [src]="'data:image/jpeg;base64,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'" />
+                        </ion-avatar>
+                        <ion-label>
+                                <div class="ion-float-left max-width">
+                                        <h2 class="title">{{'Nausad Ansari' | titlecase}}</h2>
+                                        <p class="description">{{'8:00 pm'}}</p>
+                                </div>
+                        </ion-label>
+                </ion-item>
+                <ion-buttons collapse="true" slot="end">
+                        <ion-button color="primary">
+                                <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+                        </ion-button>
+                        <ion-button color="primary">
+                                <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+                        </ion-button>
+                </ion-buttons>
+        </ion-toolbar>
+</ion-header>
+<ion-content>
+        <ion-grid class="message_box">
+                <ion-row class="row-right">
+                        <div class="message sent">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
+                                lorem.
+                                <span class="metadata">
+                                        <span class="time">10:08 PM</span><span class="tick"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                                                        id="msg-dblcheck-ack" x="2063" y="2076">
+                                                        <path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+                                                                fill="#4fc3f7"></path>
+                                                </svg></span>
+                                </span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-left">
+                        <div class="message received">
+                                Lorem ipsum.
+                                <span class="metadata"><span class="time">10:08 PM</span></span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-right">
+                        <div class="message sent">
+                                consectetur adipiscing elit. Sed ac vehicula
+                                lorem.
+                                <span class="metadata">
+                                        <span class="time">10:08 PM</span><span class="tick"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                                                        id="msg-dblcheck-ack" x="2063" y="2076">
+                                                        <path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+                                                                fill="#4fc3f7"></path>
+                                                </svg></span>
+                                </span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-left">
+                        <div class="message received">
+                                Lorem ipsum. Sed ac vehicula
+                                lorem.
+                                <span class="metadata"><span class="time">10:08 PM</span></span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-right">
+                        <div class="message sent">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                <span class="metadata">
+                                        <span class="time">10:08 PM</span><span class="tick"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                                                        id="msg-dblcheck-ack" x="2063" y="2076">
+                                                        <path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+                                                                fill="#4fc3f7"></path>
+                                                </svg></span>
+                                </span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-left">
+                        <div class="message received">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
+                                lorem.
+                                <span class="metadata"><span class="time">10:08 PM</span></span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-right">
+                        <div class="message sent">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
+                                lorem.
+                                <span class="metadata">
+                                        <span class="time">10:08 PM</span><span class="tick"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                                                        id="msg-dblcheck-ack" x="2063" y="2076">
+                                                        <path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+                                                                fill="#4fc3f7"></path>
+                                                </svg></span>
+                                </span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-left">
+                        <div class="message received">
+                                Lorem ipsum dolor sit amet.
+                                <span class="metadata"><span class="time">10:08 PM</span></span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-right">
+                        <div class="message sent">
+                                Lorem.
+                                <span class="metadata">
+                                        <span class="time">10:08 PM</span><span class="tick"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                                                        id="msg-dblcheck-ack" x="2063" y="2076">
+                                                        <path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+                                                                fill="#4fc3f7"></path>
+                                                </svg></span>
+                                </span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-left">
+                        <div class="message received">
+                                Lorem ipsum dolor sit amet, consectetur.
+                                <span class="metadata"><span class="time">10:08 PM</span></span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-right">
+                        <div class="message sent">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
+                                lorem.
+                                <span class="metadata">
+                                        <span class="time">10:08 PM</span><span class="tick"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                                                        id="msg-dblcheck-ack" x="2063" y="2076">
+                                                        <path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+                                                                fill="#4fc3f7"></path>
+                                                </svg></span>
+                                </span>
+                        </div>
+                </ion-row>
+                <ion-row class="row-left">
+                        <div class="message received">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                <span class="metadata"><span class="time">10:08 PM</span></span>
+                        </div>
+                </ion-row>
+        </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border">
+        <ion-toolbar>
+                <ion-item id="inputMessage" class="input-item" lines="none">
+                        <ion-icon class="icon-left" name="chatbubble-ellipses-outline" slot="start"></ion-icon>
+                        <ion-input inputmode="text" type="text" placeholder="Message..."></ion-input>
+                </ion-item>
+                <ion-buttons collapse="true" slot="end">
+                        <ion-button color="primary">
+                                <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+                        </ion-button>
+                </ion-buttons>
+        </ion-toolbar>
+</ion-footer>

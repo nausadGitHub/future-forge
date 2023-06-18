@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">weChat</string>
+    <string name="title_activity_main">weChat</string>
+    <string name="package_name">global.upswing.taj.app</string>
+    <string name="custom_url_scheme">global.upswing.taj.app</string>
+    <string name="channel_name">MyFirebaseMsgService</string>
+    <string name="channel_description">Taj firebase push notification</string>
+    <string name="server_client_id">775010302883-4rrgtrigdgm6o2nc9ivvghmnl7005fss.apps.googleusercontent.com</string>
+</resources>

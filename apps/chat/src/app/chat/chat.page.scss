@@ -1,0 +1,175 @@
+ion-content,
+ion-footer {
+        --ion-background-color: #0F1C24;
+}
+
+ion-header ion-toolbar.header {
+        --background: #1C2D35;
+        --min-height: 4rem;
+
+        ion-item {
+                --ion-background-color: #1C2D35;
+
+                ion-label h2,
+                p {
+                        color: #ffffff;
+                        text-overflow: ellipsis;
+                        overflow-x: hidden;
+                        font-style: normal;
+                }
+
+                ion-label h2.title {
+                        width: 90%;
+                        text-overflow: ellipsis;
+                        overflow-x: hidden;
+                        font-weight: 500;
+                        font-size: 23px;
+                        line-height: 30px;
+                        letter-spacing: 0.005em;
+                }
+
+                ion-label p.description {
+                        font-weight: 400;
+                        font-size: 12px;
+                        color: #c3c3c3;
+                        line-height: normal;
+                }
+
+                ion-avatar {
+                        width: 45px;
+                        height: 45px;
+                }
+
+                .max-width {
+                        width: 100%;
+                }
+        }
+
+        ion-item::part(native) {
+                padding: 0;
+        }
+}
+
+ion-footer {
+        ion-toolbar {
+                --min-height: 5rem;
+        }
+
+        ion-toolbar ion-buttons {
+                margin: 0 1rem 0 0;
+        }
+
+        ion-item.input-item {
+                --ion-background-color: #1C2D35;
+                border-radius: 24px;
+                min-height: 48px;
+                margin: 0 1rem;
+        }
+
+        ion-item ion-input {
+                --placeholder-color: #a5a5a5;
+                color: #bbb8b8;
+        }
+
+        ion-toolbar ion-item ion-icon.icon-left {
+                margin-inline-end: 20px;
+                color: #a5a5a5;
+        }
+}
+
+.message_box {
+        padding: 0 16px;
+
+        ion-row {
+                display: flex;
+                flex-direction: row;
+        }
+
+        ion-row:first-child {
+                margin-top: 8px;
+        }
+
+        .row-left {
+                justify-content: flex-start;
+        }
+
+        .row-right {
+                justify-content: flex-end;
+        }
+
+        .message {
+                color: #000;
+                clear: both;
+                line-height: 18px;
+                font-size: 15px;
+                padding: 8px;
+                position: relative;
+                margin: 8px 0;
+                max-width: 85%;
+                word-wrap: break-word;
+                z-index: -1;
+        }
+
+        .message:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+        }
+
+        .message.sent {
+                background: #e1ffc7;
+                border-radius: 5px 0px 5px 5px;
+                float: right;
+        }
+
+        .message.received {
+                background: #fff;
+                border-radius: 0px 5px 5px 5px;
+                float: left;
+        }
+
+        .message p {
+                line-height: 18px;
+                font-size: 15px;
+                margin: 4px 0;
+        }
+
+        .message.sent:after {
+                border-width: 0px 0 10px 10px;
+                border-color: transparent transparent transparent #e1ffc7;
+                top: 0;
+                right: -10px;
+        }
+
+        .message.received:after {
+                border-width: 0px 10px 10px 0;
+                border-color: transparent #fff transparent transparent;
+                top: 0;
+                left: -10px;
+        }
+
+        .metadata {
+                display: block;
+                float: right;
+                padding: 0 0 0 7px;
+                position: relative;
+                bottom: -4px;
+        }
+
+        .metadata .time {
+                color: rgba(0, 0, 0, .45);
+                font-size: 11px;
+                display: inline-block;
+        }
+
+        .metadata .tick {
+                display: inline-block;
+                margin-left: 2px;
+                position: relative;
+                top: 4px;
+                height: 16px;
+                width: 16px;
+        }
+}

@@ -1,0 +1,15 @@
+ion-content {
+        --ion-background-color: #0F1C24;
+}
+
+ion-toolbar.header {
+        --background: #1C2D35;
+        --min-height: 5rem;
+
+        ion-searchbar {
+                --background: #f3f3f3;
+                padding-top: 0;
+                padding-bottom: 0;
+                height: 45px;
+        }
+}

@@ -1,0 +1,17 @@
+<ion-header mode="ios" class="ion-no-border">
+        <ion-toolbar class="header">
+                <ion-searchbar focus="true" [formControl]="searchForm" (ionCancel)="cancel()" animated="true"
+                        cancel-button-icon="close" show-cancel-button="always" #search></ion-searchbar>
+        </ion-toolbar>
+</ion-header>
+<ion-content>
+        <ion-list
+                *ngIf="!(users_recent_searched_chats$ | async)?.isSearch && (users_recent_searched_chats$ | async)?.users.length > 0">
+                <user-item [users]="(users_recent_searched_chats$ | async)?.users"></user-item>
+        </ion-list>
+        <ion-list *ngIf="(users_recent_searched_chats$ | async)?.isSearch">
+                <user-skeleton *ngFor="let item of [0,1,2,3,4,5]"></user-skeleton>
+        </ion-list>
+        <user-item-empty
+                *ngIf="!(users_recent_searched_chats$ | async)?.isSearch && (users_recent_searched_chats$ | async)?.users.length === 0"></user-item-empty>
+</ion-content>

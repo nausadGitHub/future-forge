@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+      <ion-toolbar class="header">
+            <ion-title>weChat</ion-title>
+            <ion-buttons collapse="true" slot="end">
+                  <ion-button (click)="click_to_open_search()" color="primary">
+                        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+                  </ion-button>
+                  <ion-button (click)="showActions()" color="primary">
+                        <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+                  </ion-button>
+            </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content>
+      <!-- top tab -->
+      <ion-tabs class="ion-no-border" mode='ios'>
+            <ion-tab-bar class="toolbar" slot="top">
+
+                  <ion-tab-button tab="recent-chats">
+                        <ion-label class="ion-text-uppercase">Chats</ion-label>
+                        <ion-badge>6</ion-badge>
+                  </ion-tab-button>
+
+                  <ion-tab-button tab="status">
+                        <ion-label class="ion-text-uppercase">Status</ion-label>
+                  </ion-tab-button>
+
+                  <ion-tab-button tab="profile">
+                        <ion-label class="ion-text-uppercase">Profile</ion-label>
+                  </ion-tab-button>
+
+            </ion-tab-bar>
+      </ion-tabs>
+
+      <!-- bottom tab -->
+      <!-- <ion-tabs [environmentInjector]="environmentInjector">
+                <ion-tab-bar class="toolbar" slot="bottom">
+
+                        <ion-tab-button tab="recent-chats">
+                                <ion-icon name="chatbox-outline"></ion-icon>
+                                <ion-label class="ion-text-uppercase">Chats</ion-label>
+                                <ion-badge>6</ion-badge>
+                        </ion-tab-button>
+
+                        <ion-tab-button tab="status">
+                                <ion-icon name="bookmarks-outline"></ion-icon>
+                                <ion-label class="ion-text-uppercase">Status</ion-label>
+                        </ion-tab-button>
+
+                        <ion-tab-button tab="profile">
+                                <ion-icon name="people-outline"></ion-icon>
+                                <ion-label class="ion-text-uppercase">Profile</ion-label>
+                        </ion-tab-button>
+
+                </ion-tab-bar>
+        </ion-tabs> -->
+</ion-content>

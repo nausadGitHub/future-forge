@@ -1,0 +1,19 @@
+<ion-content>
+        <ion-list *ngIf="!(users_recent_chats$ | async)?.isSearch">
+                <user-item [users]="(users_recent_chats$ | async)?.users"></user-item>
+        </ion-list>
+        <ion-list *ngIf="(users_recent_chats$ | async)?.isSearch">
+                <user-skeleton *ngFor="let item of [0,1,2,3,4,5]"></user-skeleton>
+        </ion-list>
+        <user-item-empty
+                *ngIf="!(users_recent_chats$ | async)?.isSearch && (users_recent_chats$ | async)?.users.length === 0"></user-item-empty>
+        <ion-infinite-scroll position="bottom" threshold="20%" (ionInfinite)="scroll_recent_chats_users($event)">
+                <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Loading more data...">
+                </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+        <ion-fab slot="fixed" vertical="bottom" horizontal="end" mode="ios">
+                <ion-fab-button>
+                        <ion-icon color="light" name="layers-outline"></ion-icon>
+                </ion-fab-button>
+        </ion-fab>
+</ion-content>

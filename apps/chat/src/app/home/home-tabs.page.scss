@@ -1,0 +1,30 @@
+ion-content {
+        --ion-background-color: #0F1C24;
+}
+
+ion-toolbar.header {
+        --background: #1C2D35;
+        --min-height: 4rem;
+}
+
+ion-title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 30px;
+        letter-spacing: 0.005em;
+        color: #8097A1;
+}
+
+ion-tab-bar.toolbar {
+        --background: #1C2D35;
+        height: 3rem;
+
+        ion-badge {
+                color: #ffffff;
+        }
+}
+
+ion-tab-bar {
+        --border: none
+}

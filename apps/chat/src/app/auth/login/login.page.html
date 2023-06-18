@@ -1,0 +1,67 @@
+<ion-grid class="login">
+        <form [formGroup]="signin" (ngSubmit)="onClickLogin(signin.value)">
+                <ion-row>
+                        <ion-col size="12">
+                                <ion-list>
+                                        <div formGroupName="userEmail">
+                                                <ion-list-header>
+                                                        <ion-label class="custom">E-mail iD / User iD</ion-label>
+                                                </ion-list-header>
+                                                <ion-item id="inputItemEmail" class="input-item" lines="none"
+                                                        [@shakeit]="signin.get('userEmail.state').value">
+                                                        <ion-icon class="icon-left" name="person-circle-outline"
+                                                                slot="start"></ion-icon>
+                                                        <ion-input inputmode="email"
+                                                                (keydown.space)="$event.preventDefault();"
+                                                                maxlength="20" type="text" formControlName="email"
+                                                                placeholder="E-mail iD / User iD"></ion-input>
+                                                </ion-item>
+                                        </div>
+                                        <div formGroupName="userPassword">
+                                                <ion-list-header>
+                                                        <ion-label class="custom">Password</ion-label>
+                                                </ion-list-header>
+                                                <ion-item id="inputItemPassword" class="input-item" lines="none"
+                                                        [@shakeit]="signin.get('userPassword.state').value">
+                                                        <ion-icon class="icon-left" name="ellipsis-horizontal-outline"
+                                                                slot="start"></ion-icon>
+                                                        <ion-input inputmode="password"
+                                                                (keydown.space)="$event.preventDefault();"
+                                                                maxlength="20" clear-on-edit="false"
+                                                                [type]="signin.get('showPassword').value ? 'text' : 'password'"
+                                                                formControlName="password"
+                                                                placeholder="Password"></ion-input>
+                                                        <ion-button
+                                                                (click)="signin.get('showPassword').patchValue(signin.get('showPassword').value ? false : true)"
+                                                                slot="end" fill="clear" class="seeClient">
+                                                                <ion-icon slot="icon-only"
+                                                                        [name]="signin.get('showPassword').value ? 'eye' : 'eye-off'"></ion-icon>
+                                                        </ion-button>
+                                                </ion-item>
+                                        </div>
+                                        <ion-item class="forgot-or-new-user" lines="none">
+                                                <ion-button routerLink="/forgot-password" class="forgot-link"
+                                                        fill="clear">
+                                                        <p class="ion-text-capitalize">Forgot Password?</p>
+                                                </ion-button>
+                                                <ion-label class="new-user" slot="end">
+                                                        <p class="ion-text-capitalize">New to WeChat?</p>
+                                                </ion-label>
+                                        </ion-item>
+                                        <ion-item class="new-registration" lines="none">
+                                                <ion-button routerLink="/register" slot="end" fill="clear">
+                                                        <p class="ion-text-capitalize">New? Register</p>
+                                                </ion-button>
+                                        </ion-item>
+                                </ion-list>
+                        </ion-col>
+                        <ion-col class="button-col">
+                                <ion-button [disabled]="auth$ | async" type="submit" shape="round" class="submit"
+                                        expand="block">
+                                        <p *ngIf="auth$ | async"><ion-spinner name="dots"></ion-spinner></p>
+                                        <p *ngIf="!(auth$ | async)">Login</p>
+                                </ion-button>
+                        </ion-col>
+                </ion-row>
+        </form>
+</ion-grid>

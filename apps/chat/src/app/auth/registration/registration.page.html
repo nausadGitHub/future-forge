@@ -1,0 +1,122 @@
+<ion-grid class="registration">
+        <form [formGroup]="register" (ngSubmit)="onClickRegister(register.value);">
+                <ion-row>
+                        <ion-col size="12">
+                                <ion-list>
+                                        <div formGroupName="userName">
+                                                <ion-list-header>
+                                                        <ion-label class="custom">Name</ion-label>
+                                                </ion-list-header>
+                                                <ion-item [@shakeit]="register.get('userName.state').value"
+                                                        class="input-item" lines="none">
+                                                        <ion-icon class="icon-left" name="person-circle-outline"
+                                                                slot="start"></ion-icon>
+                                                        <ion-input inputmode="text" maxlength="200" type="text"
+                                                                id="name_" formControlName="name"
+                                                                placeholder="Enter Name"></ion-input>
+                                                </ion-item>
+                                        </div>
+                                        <div formGroupName="userEmail">
+                                                <ion-list-header>
+                                                        <ion-label class="custom">Email id</ion-label>
+                                                </ion-list-header>
+                                                <ion-item [@shakeit]="register.get('userEmail.state').value"
+                                                        class="input-item" lines="none">
+                                                        <ion-icon class="icon-left" name="mail-outline"
+                                                                slot="start"></ion-icon>
+                                                        <ion-input inputmode="email"
+                                                                (keydown.space)="$event.preventDefault();" type="text"
+                                                                id="emial_" formControlName="email"
+                                                                placeholder="Enter Email id"></ion-input>
+                                                </ion-item>
+                                        </div>
+                                        <div formGroupName="userPassword">
+                                                <ion-list-header>
+                                                        <ion-label class="custom">Password</ion-label>
+                                                </ion-list-header>
+                                                <ion-item [@shakeit]="register.get('userPassword.state').value"
+                                                        class="input-item" lines="none">
+                                                        <ion-icon class="icon-left" name="ellipsis-horizontal-outline"
+                                                                slot="start"></ion-icon>
+                                                        <ion-input inputmode="password"
+                                                                (keydown.space)="$event.preventDefault();"
+                                                                maxlength="20" clear-on-edit="false"
+                                                                [type]="register.get('showPassword').value ? 'text' : 'password'"
+                                                                type="password" id="password_"
+                                                                formControlName="password"
+                                                                placeholder="Password"></ion-input>
+                                                        <ion-button
+                                                                (click)="register.get('showPassword').patchValue(register.get('showPassword').value ? false : true)"
+                                                                slot="end" fill="clear" class="seeClient">
+                                                                <ion-icon slot="icon-only"
+                                                                        [name]="register.get('showPassword').value ? 'eye' : 'eye-off'"></ion-icon>
+                                                        </ion-button>
+                                                </ion-item>
+                                        </div>
+                                        <div formGroupName="userRePassword">
+                                                <ion-list-header>
+                                                        <ion-label class="custom">Confirm Password</ion-label>
+                                                </ion-list-header>
+                                                <ion-item [@shakeit]="register.get('userRePassword.state').value"
+                                                        class="input-item" lines="none">
+                                                        <ion-icon class="icon-left" name="ellipsis-horizontal-outline"
+                                                                slot="start"></ion-icon>
+                                                        <ion-input inputmode="password"
+                                                                (keydown.space)="$event.preventDefault();"
+                                                                maxlength="20" clear-on-edit="false"
+                                                                [type]="register.get('showRePassword').value ? 'text' : 'password'"
+                                                                type="password" id="re_password_"
+                                                                formControlName="re_password"
+                                                                placeholder="Confirm Password"></ion-input>
+                                                        <ion-button
+                                                                (click)="register.get('showRePassword').patchValue(register.get('showRePassword').value ? false : true)"
+                                                                slot="end" fill="clear" class="seeClient">
+                                                                <ion-icon slot="icon-only"
+                                                                        [name]="register.get('showRePassword').value ? 'eye' : 'eye-off'"></ion-icon>
+                                                        </ion-button>
+                                                </ion-item>
+                                                <ion-item class="error-input"
+                                                        *ngIf="register.hasError('confirmedValidator')" lines="none">
+                                                        <ion-note color="danger">Re-entered
+                                                                Password is not matched.</ion-note>
+                                                </ion-item>
+                                        </div>
+                                        <div formGroupName="userMobile">
+                                                <ion-list-header>
+                                                        <ion-label class="custom">Phone Number</ion-label>
+                                                </ion-list-header>
+                                                <ion-item [@shakeit]="register.get('userMobile.state').value"
+                                                        class="input-item" lines="none">
+                                                        <ion-icon class="icon-left" name="phone-portrait-outline"
+                                                                slot="start"></ion-icon>
+                                                        <ion-input maxlength="10" inputmode="number"
+                                                                (keydown.space)="$event.preventDefault();" type="text"
+                                                                id="phonenumber_" formControlName="mobile"
+                                                                placeholder="Enter Phone Number"></ion-input>
+                                                </ion-item>
+                                        </div>
+                                        <ion-item class="forgot-or-new-user" lines="none">
+                                                <ion-label class="new-user" slot="end">
+                                                        <p class="ion-text-capitalize">Already have Account?</p>
+                                                </ion-label>
+                                        </ion-item>
+                                        <ion-item class="new-registration" lines="none">
+                                                <ion-button routerLink="/login" routerDirection="back" slot="end"
+                                                        fill="clear">
+                                                        <ion-icon class="icon-left"
+                                                                name="arrow-forward-outline"></ion-icon>
+                                                        <p class="ion-text-capitalize">Go to Login</p>
+                                                </ion-button>
+                                        </ion-item>
+                                </ion-list>
+                        </ion-col>
+                        <ion-col size="12" class="button-col">
+                                <ion-button [disabled]="auth$ | async" type="submit" shape="round" class="submit"
+                                        expand="block">
+                                        <p *ngIf="auth$ | async"><ion-spinner name="dots"></ion-spinner></p>
+                                        <p *ngIf="!(auth$ | async)">create account</p>
+                                </ion-button>
+                        </ion-col>
+                </ion-row>
+        </form>
+</ion-grid>
