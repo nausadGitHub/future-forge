@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, EnvironmentInjector, inject, NgZone } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { IonicModule } from "@ionic/angular";
-import { filter, map, tap } from "rxjs";
+import { filter, map } from "rxjs";
 
 import { StatusBar } from '@capacitor/status-bar';
 import { Capacitor } from "@capacitor/core";
